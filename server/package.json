@@ -1,0 +1,9 @@
+{
+  "name": "google-chat-server",
+  "version": "0.0.1",
+  "author": "Matt Benton",
+  "description": "Server for Google Chat demo",
+  "dependencies": {
+    "socket.io": "~0.9.16"
+  }
+}
