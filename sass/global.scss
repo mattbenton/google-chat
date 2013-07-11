@@ -1,0 +1,10 @@
+@import "normalize";
+@import "compass/css3";
+
+iframe {
+  position: absolute;
+  right: 30px;
+  bottom: 0;
+
+  @include box-shadow(0 0 2px fade-out(#000, 0.7));
+}
