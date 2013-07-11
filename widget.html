@@ -14,7 +14,7 @@
     Rajiv Sunkara
     <div class="title-bar-options">
       <i class="icon-minimize title-bar-icon"></i>
-      <i class="icon-maximize title-bar-icon"></i>
+      <i class="icon-maximize title-bar-icon" onclick="maximize()"></i>
       <i class="icon-close title-bar-icon"></i>
     </div>
   </div>
@@ -38,9 +38,17 @@
       <div class="message message-other group">
         <div class="avatar"></div>
         <div class="message-content">
-          asdffds<br/>
-          sdfo<br/>
-          sd
+          I was talking to arend yesterday - he was saying that you should know: <br/>
+          - Big O notation<br/>
+          - variety of data structures, how to implement them <br/>
+          - patterns<br/>
+          - OO<br/>
+          - system architecture : <br/>
+          - interrupt<br/>
+          - io<br/>
+          - clock cycles,<br/>
+          - etc<br/>
+          So basically CS stuff
           <div class="message-date">Rajiv • 20 Jun 00:10</div>
         </div>
       </div>
@@ -78,5 +86,10 @@
       <i class="icon icon-upload"></i>
     </div>
   </div>
+  <script>
+  function maximize() {
+    var ref = window.open('widget.html', 'widget', 'menubar=no,location=no,resizable=yes,scrollbars=no,status=no,dependent=yes,width=262,height=380');
+  }
+  </script>
 </body>
 </html>
