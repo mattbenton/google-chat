@@ -93,7 +93,7 @@ $(function(){
     $messages.scrollTop($messages[0].scrollHeight);
   };
 
-  var socket = io.connect('http://localhost:8080');
+  var socket = io.connect('http://' + location.hostname + ':8080');
   socket.on('msg', function ( msg ) {
     msg.klass = 'message-' + encodeURIComponent(msg.email);
 
