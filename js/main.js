@@ -28,7 +28,7 @@ $(function() {
 
   // $openBtn.click();
 
-  if ( location.hostname.indexOf('matt') !== -1 ) {
+  if ( location.hostname.indexOf('matt') === -1 ) {
     createWidget('Matt', 'matt@mattbenton.net');
     createWidget('Tarwin', 'tarwin@gmail.com');
   }
