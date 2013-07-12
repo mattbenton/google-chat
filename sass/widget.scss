@@ -88,6 +88,8 @@ html, body {
 .messages {
   height: 227px;
 
+  // border: 1px solid red;
+
   // For nice little scrollbar gap.
   margin-right: 1px;
 
@@ -125,6 +127,10 @@ html, body {
   float: right;
   clear: both;
   margin-bottom: 8px;
+}
+
+.message-template {
+  display: none;
 }
 
 .message-other {

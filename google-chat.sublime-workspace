@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"pro",
+				"prototype"
+			],
+			[
+				"widget",
+				"widget-height"
+			],
+			[
+				"wid",
+				"widget-width"
+			],
+			[
+				"po",
+				"pointer"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"ico",
+				"icon-size"
+			],
+			[
 				"siteI",
 				"siteIdsSql"
 			],
@@ -380,10 +412,6 @@
 				"export-loader"
 			],
 			[
-				"pro",
-				"processed"
-			],
-			[
 				"setCa",
 				"storeToCache(...)	Unknown<14>"
 			],
@@ -486,47 +514,66 @@
 			[
 				"DateTimeZon",
 				"DateTimeZoneHelper	poko.utils.datetime"
-			],
-			[
-				"getTime",
-				"getTimezoneFromOffset	function"
-			],
-			[
-				"format_",
-				"format_boolean"
-			],
-			[
-				"array_ke",
-				"array_key_exists"
-			],
-			[
-				"seg",
-				"segmentHash	var"
-			],
-			[
-				"segme",
-				"segment_ids"
-			],
-			[
-				"segment",
-				"segmentIds"
-			],
-			[
-				"getSe",
-				"getSegmentsByCampaignId(...)	Array<fp.data.objects.Segment>"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"contents": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title></title>\n  <meta name=\"description\" content=\"\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n</head>\n<body>\n\n</body>\n</html>",
 			"file": "widget.html",
-			"file_size": 269,
-			"file_write_time": 130179993440000000,
 			"settings":
 			{
-				"buffer_size": 270,
+				"buffer_size": 3766,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/widget.js",
+			"settings":
+			{
+				"buffer_size": 925,
+				"line_ending": "Unix",
+				"name": "(function() {"
+			}
+		},
+		{
+			"file": "server/app.js",
+			"settings":
+			{
+				"buffer_size": 2055,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/index.html",
+			"settings":
+			{
+				"buffer_size": 236,
+				"line_ending": "Unix",
+				"name": "<script src=\"/socket.io/socket.io.js\"></script>"
+			}
+		},
+		{
+			"file": "sass/widget.scss",
+			"settings":
+			{
+				"buffer_size": 5439,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/package.json",
+			"settings":
+			{
+				"buffer_size": 184,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.min.js",
+			"settings":
+			{
+				"buffer_size": 44814,
 				"line_ending": "Unix"
 			}
 		}
@@ -542,12 +589,16 @@
 				"Set Syntax: HTML"
 			],
 			[
-				"ss js",
-				"Set Syntax: JavaScript"
-			],
-			[
 				"in",
 				"Indentation: Convert to Spaces"
+			],
+			[
+				"ind",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"ss js",
+				"Set Syntax: JavaScript"
 			],
 			[
 				"wra",
@@ -564,10 +615,6 @@
 			[
 				"wo",
 				"Word Wrap: Toggle"
-			],
-			[
-				"ind",
-				"Indentation: Convert to Spaces"
 			],
 			[
 				"ss java",
@@ -726,13 +773,17 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 575.0
+		"width": 467.0
 	},
 	"console":
 	{
 		"height": 300.0,
 		"history":
 		[
+			"view.settings().get('detect_indentation')",
+			"view.settings().get('translate_tabs_to_spaces')",
+			"view.settings().get('tab_size')",
+			"view.settings().get('font_face')"
 		]
 	},
 	"distraction_free":
@@ -746,6 +797,19 @@
 	},
 	"file_history":
 	[
+		"/Users/matt/github/google-chat/vendor/jquery-1.10.2.min.js",
+		"/Users/matt/github/google-chat/index.html",
+		"/Users/matt/github/google-chat/server/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js",
+		"/Users/matt/github/google-chat/.gitignore",
+		"/Users/matt/github/google-chat/server/package.json",
+		"/Users/matt/github/google-chat/server/node_modules/socket.io/index.js",
+		"/Users/matt/github/google-chat/server/node_modules/socket.io/lib/socket.io.js",
+		"/Users/matt/github/google-chat/sass/global.scss",
+		"/Users/matt/github/google-chat/css/widget.css",
+		"/Users/matt/github/google-chat/config.rb",
+		"/Users/matt/github/google-chat/sass/widget.scss",
+		"/Users/matt/github/google-chat/google-chat.sublime-project",
+		"/Users/matt/github/google-chat/sass/screen.scss",
 		"/Users/matt/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/matt/work/fanplayr/product/trunk/site/www/tpl/dashboard/analytics/genius/oss_js.php",
 		"/Users/matt/work/fanplayr/product/trunk/site/www/tpl/dashboard/analytics/ViewSt.php",
@@ -860,20 +924,7 @@
 		"/Users/matt/tmp/mysql.php",
 		"/Users/matt/tmp/mysql.rb",
 		"/usr/local/opt/mysql/support-files/m",
-		"/etc/paths",
-		"/Users/matt/work/fanplayr/.profile",
-		"/Users/matt/.dotfiles/dotfiles.sh",
-		"/Users/matt/.profile",
-		"/Applications/XAMPP/xamppfiles/etc/php.ini",
-		"/private/etc/apache2/httpd.conf",
-		"/Applications/XAMPP/xamppfiles/etc/httpd.conf",
-		"/Users/matt/work/fanplayr/product/trunk/site/www/tpl/dashboard/SessionViewer.php",
-		"/Users/matt/Downloads/DbUtils.java",
-		"/Users/matt/work/fanplayr/website-branches/2.0/wordpress/wp-content/themes/fanplayr-2.1.0/functions.php",
-		"/Users/matt/work/fanplayr/website-branches/2.0/wordpress/wp-content/themes/fanplayr-2.1.0/template-partners.php",
-		"/Users/matt/work/fanplayr/product/trunk/site/src/site/Join.hx",
-		"/Users/matt/work/fanplayr/website-branches/2.0/wordpress/wp-content/themes/fanplayr-2.1.0/recaptcha-php-1.11/recaptchalib.php",
-		"/Users/matt/dev/nodejs/socket.io/index.html"
+		"/etc/paths"
 	],
 	"find":
 	{
@@ -921,6 +972,71 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console",
+			"items",
+			"wait",
+			"'",
+			"true",
+			"false",
+			"other",
+			"Alright",
+			"true",
+			"me",
+			"text",
+			"add",
+			"true",
+			"other",
+			"group",
+			"Test",
+			"type",
+			"message",
+			"          ",
+			"top",
+			"hidden",
+			"none",
+			"fixed",
+			"none",
+			"8",
+			"10",
+			"photo",
+			"smiley",
+			"icon",
+			"120px",
+			"right",
+			"relative",
+			"3",
+			"asdffds",
+			"right",
+			"left",
+			"claer",
+			"content",
+			"inclide",
+			"option-icon",
+			"\"></i>",
+			"icon-fade",
+			"video",
+			"120px",
+			"close",
+			"5",
+			"minimize",
+			"maximize",
+			"minimize",
+			"404040",
+			"image",
+			"bottom",
+			"li",
+			"ul",
+			"chat",
+			"fffgg",
+			"group",
+			"div",
+			"'",
+			"global",
+			"javascripts",
+			"stylesheets",
+			"global",
+			"screen",
+			"stylesheets",
 			"dev",
 			"fanplayr",
 			"siteId\\b",
@@ -983,72 +1099,7 @@
 			"timeoutId",
 			"intervalId",
 			"timeoutId",
-			"clearTimeout",
-			"getElementById",
-			"querySelector",
-			"\"",
-			"Boolean.",
-			"Double.",
-			"Double",
-			"Integer.",
-			"Integer",
-			", ",
-			"ENDPO",
-			"ajax",
-			"Error updating campaign",
-			"site",
-			"camp",
-			"top",
-			"sidebar-text-es",
-			"button",
-			"btn",
-			"it",
-			"ITALIAN",
-			"Italian",
-			"italian",
-			"Considconsejogli",
-			"it[",
-			"it",
-			"IT",
-			"it",
-			"IT",
-			"it",
-			"IT",
-			"it",
-			"Italian",
-			"doc",
-			"site",
-			"com",
-			"ServerName",
-			"com",
-			"iframe",
-			"Account",
-			"Tarwin",
-			"stage",
-			"fanplayr",
-			"version",
-			"site",
-			"getSiteInfo",
-			"cache",
-			"graphData",
-			"CacheUtil",
-			"=",
-			"graphs",
-			"cache",
-			"data",
-			"cache",
-			",",
-			"/Users/matt/work/fanplayr/",
-			"topnav",
-			"template",
-			"template_filename",
-			"Offers",
-			"ABC123",
-			"Expires",
-			"Never",
-			"Expires",
-			"mini",
-			"small"
+			"clearTimeout"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1069,7 +1120,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1078,22 +1129,187 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 270,
+						"buffer_size": 3766,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								254,
-								254
+								347,
+								347
 							]
 						],
 						"settings":
 						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/widget.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 925,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								450,
+								450
+							]
+						],
+						"settings":
+						{
+							"auto_name": "(function() {",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "server/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								821,
+								821
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 359.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "server/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 236,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								226,
+								59
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<script src=\"/socket.io/socket.io.js\"></script>",
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "sass/widget.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5439,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1252,
+								1252
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "server/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 184,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								56,
+								56
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "server/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.min.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 44814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								44814,
+								44814
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 311457.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -1148,6 +1364,42 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"sock",
+				"server/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.min.js"
+			],
+			[
+				"git",
+				".gitignore"
+			],
+			[
+				"pack",
+				"server/package.json"
+			],
+			[
+				"ind",
+				"index.html"
+			],
+			[
+				"gl",
+				"sass/global.scss"
+			],
+			[
+				"wid",
+				"css/widget.css"
+			],
+			[
+				"con",
+				"config.rb"
+			],
+			[
+				"widg",
+				"sass/widget.scss"
+			],
+			[
+				"glo",
+				"sass/global.scss"
+			],
 			[
 				"fpanalyticsdbutility",
 				"src/fp/data/api/FpAnalyticsDbUtility.hx"
@@ -1623,42 +1875,6 @@
 			[
 				"poko",
 				"site/src/poko/Poko.hx"
-			],
-			[
-				"dumpre",
-				"site/www/inc/utils/dump_request_info.php"
-			],
-			[
-				"fpcon",
-				"site/src/site/core/FpController.hx"
-			],
-			[
-				"temtes",
-				"site/www/temp/test.php"
-			],
-			[
-				"fpdbut",
-				"site/src/fp/data/api/FpDbUtility.hx"
-			],
-			[
-				"fix-",
-				"site/www/widgets/genius/js/fix-sales-order-url.js"
-			],
-			[
-				"transaction",
-				"site/www/tpl/dashboard/account/Transactions.php"
-			],
-			[
-				"cachepre",
-				"site/src/fp/data/api/CachePrefixes.hx"
-			],
-			[
-				"domain",
-				"site/src/utils/DomainUtils.hx"
-			],
-			[
-				"fpbase",
-				"site/src/fp/data/api/FpBaseApi.hx"
 			]
 		],
 		"width": 0.0
@@ -1669,12 +1885,20 @@
 		"selected_items":
 		[
 			[
-				"tet",
-				"~/github/tetris/tetris.sublime-project"
+				"run",
+				"~/work/fanplayr/product/trunk/site/fanplayr-runtime.sublime-project"
+			],
+			[
+				"ru",
+				"~/work/fanplayr/product/trunk/site/fanplayr-runtime.sublime-project"
 			],
 			[
 				"",
 				"~/work/fanplayr/eclipse-workspace/genius-reports/genius-reports.sublime-project"
+			],
+			[
+				"tet",
+				"~/github/tetris/tetris.sublime-project"
 			]
 		],
 		"width": 380.0

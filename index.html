@@ -10,6 +10,19 @@
 </head>
 <body>
 
-  <iframe src="widget.html" width="262" height="380" frameBorder="0"></iframe>
+  <div class="chat-widgets"></div>
+
+  <div class="widget-input">
+    <input id="user-name" type="text" value="Matt Benton" /><br/>
+    <input id="user-email" type="text" value="matt@mattbenton.net" /><br/>
+    <button id="open-chat-btn">Open chat as user</button>
+
+    <br/><br/>
+    <button onclick="createWidget('Matt', 'matt@mattbenton.net');">Open as Matt</button><br/>
+    <button onclick="createWidget('Denis', 'denis.mars@jivesoftware.com');">Open as Denis</button><br/>
+  </div>
+
+  <script src="vendor/jquery-1.10.2.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

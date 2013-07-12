@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app2="gc">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,78 +8,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/widget.css" rel="stylesheet" />
 </head>
-<body class="s-online">
+<body class="s-online" ng-controller2="Widget">
+
   <div class="title-bar group">
     <i class="icon-bubble"></i>
-    Rajiv Sunkara
+    <span class="user-name"></span>
     <div class="title-bar-options">
       <i class="icon-minimize title-bar-icon"></i>
       <i class="icon-maximize title-bar-icon" onclick="maximize()"></i>
       <i class="icon-close title-bar-icon"></i>
     </div>
-  </div>
+  </div><!-- .title-bar -->
+
   <div class="widget-body">
+
     <hr class="status-line" />
+
     <div class="options-bar">
       <i class="icon-video options-bar-icon"></i>
       <i class="icon-add-user options-bar-icon"></i>
       <i class="icon-gear options-bar-icon"></i>
     </div>
-    <div class="messages group">
-      <div class="message group">
+
+    <div class="messages">
+      <div class="message message-template">
         <div class="avatar"></div>
-        <div class="message-content">
-          asdffds<br/>
-          sdfo<br/>
-          sd
-          <div class="message-date">Rajiv • 20 Jun 00:10</div>
-        </div>
-      </div>
-      <div class="message message-other group">
-        <div class="avatar"></div>
-        <div class="message-content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          <div class="message-date">Rajiv • 20 Jun 00:10</div>
-        </div>
-      </div>
-      <div class="message message-other group">
-        <div class="avatar"></div>
-        <div class="message-content">
-          asdffds<br/>
-          sdfo<br/>
-          sd
-          <div class="message-date">Rajiv • 20 Jun 00:10</div>
-        </div>
-      </div>
-      <div class="message message-other group">
-        <div class="avatar"></div>
-        <div class="message-content">
-          asdffds<br/>
-          sdfo<br/>
-          sd
-          <div class="message-date">Rajiv • 20 Jun 00:10</div>
-        </div>
-      </div>
-      <div class="message message-other group">
-        <div class="avatar"></div>
-        <div class="message-content">
-          asdffds<br/>
-          sdfo<br/>
-          sd
-          <div class="message-date">Rajiv • 20 Jun 00:10</div>
-        </div>
+        <div class="message-content"></div>
       </div>
     </div>
+
     <div class="message-input-wrapper s-focused">
       <i class="icon icon-smiley"></i>
-      <div class="message-input" contenteditable="true">Send a message...</div>
+      <div class="message-input" contenteditable="true" data-placeholder="Send a message..."></div>
       <i class="icon icon-upload"></i>
     </div>
-  </div>
-  <script>
-  function maximize() {
-    var ref = window.open('widget.html', 'widget', 'menubar=no,location=no,resizable=yes,scrollbars=no,status=no,dependent=yes,width=262,height=380');
-  }
-  </script>
+
+  </div><!-- .widget-body -->
+
+  <script src="vendor/jquery-1.10.2.min.js"></script>
+  <script src="vendor/underscore-min.js"></script>
+  <script src="vendor/socket.io/socket.io.min.js"></script>
+  <script src="vendor/md5.js"></script>
+  <script src="js/widget.js"></script>
 </body>
 </html>
