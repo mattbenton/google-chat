@@ -48,14 +48,8 @@ $(function(){
 
     if ( params.email ) {
       email = params.email;
-      // setAvatar(getGravatar(params.email));
     }
   }
-
-  // function setAvatar ( url ) {
-  //   var css = '.message .avatar { background-image: url(' + url + '); }';
-  //   $('<style>' + css + '</style>').appendTo($head);
-  // }
 
   function getGravatar ( email ) {
     return 'http://www.gravatar.com/avatar/' + md5(email) + '?s=32';
@@ -95,12 +89,6 @@ $(function(){
 
   var socket = io.connect('http://' + location.hostname + ':8080');
   socket.on('msg', function ( msg ) {
-    msg.klass = 'message-' + encodeURIComponent(msg.email);
-
-    if ( !knownEmails[msg.email] ) {
-      css.append('.' + msg.klass + ' .avatar { background-image: url(' + getGravatar(msg.email) + '}').update();
-    }
-
     addMessage(msg);
   });
 
@@ -125,8 +113,7 @@ $(function(){
 
         addMessage({
           email:   email,
-          message: text,
-          klass:   'message-' + encodeURIComponent(email)
+          message: text
         });
 
         socket.emit('msg', {
