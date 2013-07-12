@@ -28,8 +28,10 @@ $(function() {
 
   // $openBtn.click();
 
-  createWidget('Matt', 'matt@mattbenton.net');
-  createWidget('Tarwin', 'tarwin@gmail.com');
+  if ( location.hostname.indexOf('matt') !== -1 ) {
+    createWidget('Matt', 'matt@mattbenton.net');
+    createWidget('Tarwin', 'tarwin@gmail.com');
+  }
 
   window.createWidget = createWidget;
 
