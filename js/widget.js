@@ -1,6 +1,8 @@
 $(function(){
   var $window = $(window);
 
+  // var instance = window.chatWidgetInstance;
+
   var widgetId = -1;
 
   var email = null;
@@ -55,9 +57,21 @@ $(function(){
     return 'http://www.gravatar.com/avatar/' + md5(email) + '?s=32';
   }
 
+  function triggerParentEvent ( type ) {
+    var parentJQuery = window.parent.jQuery;
+    if ( parentJQuery ) {
+      parentJQuery(window.parent.document).trigger(type);
+    }
+  }
+
   $('.icon-maximize').click(function() {
     var options = 'menubar=no,location=no,resizable=yes,scrollbars=no,status=no,dependent=yes,width=262,height=380';
     var ref = window.open(location.href, 'widget', options);
+  });
+
+  $('.icon-minimize').click(function() {
+    // console.log(window.chatWidgetInstance);
+    triggerParentEvent('chat-minimize');
   });
 
   init();
@@ -129,24 +143,3 @@ $(function(){
 
   resize();
 });
-
-function Widget () {
-
-}
-
-Widget.prototype.resize = function () {
-
-};
-
-Widget.prototype.maximize = function () {
-  var options = 'menubar=no,location=no,resizable=yes,scrollbars=no,status=no,dependent=yes,width=262,height=380';
-  var ref = window.open(location.href, 'widget', options);
-};
-
-function MessageList () {
-
-}
-
-MessageList.prototype.resize = function () {
-
-};

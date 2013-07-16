@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"cur",
+				"cursor"
+			],
+			[
+				"prot",
+				"prototype"
+			],
+			[
+				"widg",
+				"widgetCount"
+			],
+			[
+				"get",
+				"getGravatar"
+			],
+			[
+				"user",
+				"userName"
+			],
+			[
+				"key",
+				"keyCode"
+			],
+			[
+				"sub",
+				"submitKeyDownWithCtrl"
+			],
+			[
+				"input",
+				"inputHeight"
+			],
+			[
 				"pro",
 				"prototype"
 			],
@@ -62,10 +94,6 @@
 			[
 				"time",
 				"timeoutId"
-			],
-			[
-				"get",
-				"getElementById"
 			],
 			[
 				"Dash",
@@ -180,10 +208,6 @@
 				"sessions_by_key"
 			],
 			[
-				"sub",
-				"sub_total"
-			],
-			[
 				"user_",
 				"user_session_id"
 			],
@@ -294,14 +318,6 @@
 			[
 				"res",
 				"resolve_file"
-			],
-			[
-				"cur",
-				"current_path"
-			],
-			[
-				"user",
-				"userKey"
 			],
 			[
 				"Ran",
@@ -498,82 +514,60 @@
 			[
 				"pages",
 				"pagesExpandBtn"
-			],
-			[
-				"quo",
-				"quote_bold"
-			],
-			[
-				"expire",
-				"expire-btn"
-			],
-			[
-				"prev",
-				"prev_qty"
-			],
-			[
-				"DateTimeZon",
-				"DateTimeZoneHelper	poko.utils.datetime"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "widget.html",
-			"settings":
-			{
-				"buffer_size": 3766,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "js/widget.js",
 			"settings":
 			{
-				"buffer_size": 925,
-				"line_ending": "Unix",
-				"name": "(function() {"
-			}
-		},
-		{
-			"file": "server/app.js",
-			"settings":
-			{
-				"buffer_size": 2055,
+				"buffer_size": 3859,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "server/index.html",
+			"file": "templates/matt.html",
 			"settings":
 			{
-				"buffer_size": 236,
+				"buffer_size": 109,
 				"line_ending": "Unix",
-				"name": "<script src=\"/socket.io/socket.io.js\"></script>"
+				"name": "MATT!@#"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html ng-app=\"App\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title></title>\n  <meta name=\"description\" content=\"\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link href=\"css/widget.css\" rel=\"stylesheet\" />\n</head>\n<body class=\"s-online\" ng-controller2=\"Widget\">\n\n  <div class=\"title-bar group\">\n    <i class=\"icon-bubble\"></i>\n    <span class=\"user-name\"></span>\n    <div class=\"title-bar-options\">\n      <i class=\"icon-minimize title-bar-icon\"></i>\n      <i class=\"icon-maximize title-bar-icon\"></i>\n      <i class=\"icon-close title-bar-icon\"></i>\n    </div>\n  </div><!-- .title-bar -->\n\n  <div class=\"widget-body\">\n\n    <hr class=\"status-line\" />\n\n    <div class=\"options-bar\">\n      <i class=\"icon-video options-bar-icon\"></i>\n      <i class=\"icon-add-user options-bar-icon\"></i>\n      <i class=\"icon-gear options-bar-icon\"></i>\n    </div>\n\n    <div class=\"messages\">\n      <matt data-\"\">asdf</matt>\n      <div class=\"message message-template\">\n        <div class=\"avatar\"></div>\n        <div class=\"message-content\"></div>\n      </div>\n    </div>\n\n    <div class=\"message-input-wrapper s-focused\">\n      <i class=\"icon icon-smiley\"></i>\n      <div class=\"message-input\" contenteditable=\"true\" data-placeholder=\"Send a message...\"></div>\n      <i class=\"icon icon-upload\"></i>\n    </div>\n\n  </div><!-- .widget-body -->\n\n  <script src=\"vendor/jquery-1.10.2.min.js\"></script>\n  <script src=\"vendor/angular.min.js\"></script>\n  <script src=\"vendor/underscore-min.js\"></script>\n  <script src=\"vendor/socket.io/socket.io.min.js\"></script>\n  <script src=\"vendor/md5.js\"></script>\n  <script src=\"js/widget.js\"></script>\n</body>\n</html>",
+			"file": "widget.html",
+			"file_size": 1718,
+			"file_write_time": 130181321730000000,
+			"settings":
+			{
+				"buffer_size": 1726,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "sass/widget.scss",
 			"settings":
 			{
-				"buffer_size": 5439,
+				"buffer_size": 5508,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "server/package.json",
+			"file": "server/app.js",
 			"settings":
 			{
-				"buffer_size": 184,
+				"buffer_size": 2552,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "server/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.min.js",
+			"file": "sass/global.scss",
 			"settings":
 			{
-				"buffer_size": 44814,
+				"buffer_size": 478,
 				"line_ending": "Unix"
 			}
 		}
@@ -581,9 +575,13 @@
 	"build_system": "Packages/Haxe/Support/Hxml.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 147.0,
 		"selected_items":
 		[
+			[
+				"war",
+				"Word Wrap: Toggle"
+			],
 			[
 				"ss html",
 				"Set Syntax: HTML"
@@ -797,17 +795,25 @@
 	},
 	"file_history":
 	[
-		"/Users/matt/github/google-chat/vendor/jquery-1.10.2.min.js",
+		"/Users/matt/github/google-chat/js/main.js",
 		"/Users/matt/github/google-chat/index.html",
+		"/Users/matt/github/google-chat/sass/global.scss",
+		"/Users/matt/github/google-chat/sass/widget.scss",
+		"/Users/matt/github/google-chat/server/app.js",
+		"/Users/matt/github/google-chat/js/widget.js",
+		"/Users/matt/github/google-chat/widget.html",
+		"/Users/matt/github/google-chat/server/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.min.js",
+		"/Users/matt/github/google-chat/server/index.html",
+		"/private/etc/apache2/extra/httpd-vhosts.conf",
+		"/etc/hosts",
+		"/Users/matt/github/google-chat/server/package.json",
+		"/Users/matt/github/google-chat/vendor/jquery-1.10.2.min.js",
 		"/Users/matt/github/google-chat/server/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js",
 		"/Users/matt/github/google-chat/.gitignore",
-		"/Users/matt/github/google-chat/server/package.json",
 		"/Users/matt/github/google-chat/server/node_modules/socket.io/index.js",
 		"/Users/matt/github/google-chat/server/node_modules/socket.io/lib/socket.io.js",
-		"/Users/matt/github/google-chat/sass/global.scss",
 		"/Users/matt/github/google-chat/css/widget.css",
 		"/Users/matt/github/google-chat/config.rb",
-		"/Users/matt/github/google-chat/sass/widget.scss",
 		"/Users/matt/github/google-chat/google-chat.sublime-project",
 		"/Users/matt/github/google-chat/sass/screen.scss",
 		"/Users/matt/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
@@ -857,8 +863,6 @@
 		"/Users/matt/work/fanplayr/product/trunk/site/www/lib/utils/Localization.class.php",
 		"/Users/matt/work/fanplayr/product/trunk/site/src/fp/data/objects/Campaign.hx",
 		"/Users/matt/work/fanplayr/product/trunk/site/www/widgets/common/js/strftime.js",
-		"/etc/hosts",
-		"/private/etc/apache2/extra/httpd-vhosts.conf",
 		"/Users/matt/work/fanplayr/product/trunk/site/www/tpl/dashboard/genius/segments/segment-editor.php",
 		"/Users/matt/work/fanplayr/product/trunk/site/src/fp/data/objects/SegmentRuleset.hx",
 		"/Users/matt/work/fanplayr/product/trunk/site/www/tpl/dashboard/session-viewer/SessionFlow.php",
@@ -918,13 +922,7 @@
 		"/Users/matt/tmp/seattle-coffee-gear/objects/page.rb",
 		"/Users/matt/tmp/seattle-coffee-gear/objects/std.rb",
 		"/usr/local/opt/mysql/support-files/my-default.cnf",
-		"/usr/local/var/mysql/ls",
-		"/etc/my.cnf.orig",
-		"/Users/matt/tmp/seattle-coffee-gear/database.rb",
-		"/Users/matt/tmp/mysql.php",
-		"/Users/matt/tmp/mysql.rb",
-		"/usr/local/opt/mysql/support-files/m",
-		"/etc/paths"
+		"/usr/local/var/mysql/ls"
 	],
 	"find":
 	{
@@ -972,6 +970,54 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"MATT",
+			"asdff",
+			"css",
+			"localhost",
+			"server",
+			"resize",
+			"Widget",
+			"Matt",
+			"Benton",
+			"conso",
+			"Sunkara",
+			"group",
+			"msg",
+			"head",
+			"email",
+			"conso",
+			"client",
+			"init",
+			"Matt",
+			"Exception",
+			"window.",
+			"window",
+			"setAvatar",
+			"email",
+			"match",
+			"appendTo",
+			"login",
+			"text",
+			"messageClode",
+			"group",
+			"closing",
+			"text",
+			"keyup2",
+			"sanitizeInput",
+			"Removes",
+			"event",
+			"keydown",
+			"value",
+			"keydown",
+			"inputWrapper",
+			"clientHeight",
+			"windowHeight",
+			"height",
+			"angular",
+			"authResult",
+			"resume",
+			"app",
+			"tetris",
 			"console",
 			"items",
 			"wait",
@@ -1051,55 +1097,7 @@
 			"WHERE",
 			"sql += \" WHERE siteId = \" + siteId;",
 			"null",
-			"alials",
-			"WHERE",
-			"\" WHERE siteId = \" + siteId;",
-			"siteId",
-			"_getOffersRedeemed",
-			"siteId",
-			"siteIds",
-			"siteId",
-			"siteId:Int",
-			"siteId",
-			"siteId:Int",
-			"siteId",
-			"s",
-			"siteId:Int",
-			"siteId",
-			"nt",
-			"siteId",
-			"WHERE",
-			"siteIds",
-			"siteIdsSql",
-			"siteId:Int",
-			"'",
-			"Stirng",
-			"endDate",
-			"endDate:Date",
-			"query.endDate",
-			"'endDate'",
-			"processQuery",
-			"filtersInt",
-			"&",
-			"endpoin",
-			"anal-geni-head-below",
-			"filters",
-			"campaign",
-			"userDef",
-			"campaigd",
-			"automate_checkout",
-			"process",
-			"document.querySel",
-			"document",
-			"document.querySelector",
-			"billing",
-			"isValidSection",
-			"opc",
-			"wait",
-			"timeoutId",
-			"intervalId",
-			"timeoutId",
-			"clearTimeout"
+			"alials"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1120,112 +1118,57 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "widget.html",
+					"file": "js/widget.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3766,
+						"buffer_size": 3859,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								347,
-								347
+								3743,
+								3743
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1869.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "js/widget.js",
+					"file": "templates/matt.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 925,
+						"buffer_size": 109,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								450,
-								450
+								43,
+								43
 							]
 						],
 						"settings":
 						{
-							"auto_name": "(function() {",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "server/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2055,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								821,
-								821
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 359.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "server/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 236,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								226,
-								59
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<script src=\"/socket.io/socket.io.js\"></script>",
+							"auto_name": "MATT!@#",
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -1235,20 +1178,47 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "sass/widget.scss",
+					"buffer": 2,
+					"file": "widget.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5439,
+						"buffer_size": 1726,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1252,
-								1252
+								985,
+								985
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "sass/widget.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5508,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2032,
+								2032
 							]
 						],
 						"settings":
@@ -1262,54 +1232,54 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "server/package.json",
+					"buffer": 4,
+					"file": "server/app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 184,
+						"buffer_size": 2552,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								56,
-								56
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "server/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.min.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 44814,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								44814,
-								44814
+								716,
+								716
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 311457.0,
+						"translation.x": 0.0,
+						"translation.y": 87.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "sass/global.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 478,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								476,
+								476
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -1365,16 +1335,44 @@
 		"selected_items":
 		[
 			[
+				"glo",
+				"sass/global.scss"
+			],
+			[
+				"app.",
+				"server/app.js"
+			],
+			[
+				"widget",
+				"sass/widget.scss"
+			],
+			[
+				"wi",
+				"sass/widget.scss"
+			],
+			[
+				"widg",
+				"widget.html"
+			],
+			[
+				"global",
+				"sass/global.scss"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"pack",
+				"server/package.json"
+			],
+			[
 				"sock",
 				"server/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.min.js"
 			],
 			[
 				"git",
 				".gitignore"
-			],
-			[
-				"pack",
-				"server/package.json"
 			],
 			[
 				"ind",
@@ -1391,14 +1389,6 @@
 			[
 				"con",
 				"config.rb"
-			],
-			[
-				"widg",
-				"sass/widget.scss"
-			],
-			[
-				"glo",
-				"sass/global.scss"
 			],
 			[
 				"fpanalyticsdbutility",
@@ -1855,26 +1845,6 @@
 			[
 				"decr",
 				"site/www/inc/utils/decrypt_store_session_data.php"
-			],
-			[
-				"segmenr",
-				"site/src/fp/data/objects/SegmentRuleset.hx"
-			],
-			[
-				"http",
-				"site/src/site/core/utils/Http.hx"
-			],
-			[
-				"fix",
-				"site/www/widgets/genius/js/fix-sales-order-url.js"
-			],
-			[
-				"logger",
-				"site/src/utils/Logger.hx"
-			],
-			[
-				"poko",
-				"site/src/poko/Poko.hx"
 			]
 		],
 		"width": 0.0
@@ -1886,6 +1856,10 @@
 		[
 			[
 				"run",
+				"~/work/fanplayr/product/trunk/site/fanplayr-runtime.sublime-project"
+			],
+			[
+				"runt",
 				"~/work/fanplayr/product/trunk/site/fanplayr-runtime.sublime-project"
 			],
 			[

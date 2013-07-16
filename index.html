@@ -8,21 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/global.css" rel="stylesheet" />
 </head>
-<body>
+<body ng-controller="Test">
 
   <div class="chat-widgets"></div>
 
   <div class="widget-input">
-    <input id="user-name" type="text" value="Matt Benton" /><br/>
-    <input id="user-email" type="text" value="matt@mattbenton.net" /><br/>
-    <button id="open-chat-btn">Open chat as user</button>
-
-    <br/><br/>
-    <button onclick="createWidget('Matt', 'matt@mattbenton.net');">Open as Matt</button><br/>
-    <button onclick="createWidget('Denis', 'denis.mars@jivesoftware.com');">Open as Denis</button><br/>
+    <button onclick="createWidget('Matt', 'matt@mattbenton.net');">Chat with test user 'Matt'</button><br/>
+    <button onclick="createWidget('Dummy', 'dummy@test.com');">Chat with test user 'Dummy'</button><br/>
   </div>
 
   <script src="vendor/jquery-1.10.2.min.js"></script>
+  <script src="vendor/socket.io/socket.io.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
