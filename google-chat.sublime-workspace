@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"trig",
+				"triggerParentEvent"
+			],
+			[
+				"inject",
+				"injectInstance"
+			],
+			[
 				"cur",
 				"cursor"
 			],
@@ -506,14 +514,6 @@
 			[
 				"reques",
 				"requestUri	var"
-			],
-			[
-				"paddin",
-				"padding-bottom"
-			],
-			[
-				"pages",
-				"pagesExpandBtn"
 			]
 		]
 	},
@@ -523,51 +523,47 @@
 			"file": "js/widget.js",
 			"settings":
 			{
-				"buffer_size": 3859,
+				"buffer_size": 3507,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "templates/matt.html",
-			"settings":
-			{
-				"buffer_size": 109,
-				"line_ending": "Unix",
-				"name": "MATT!@#"
-			}
-		},
-		{
-			"contents": "<!DOCTYPE html>\n<html ng-app=\"App\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title></title>\n  <meta name=\"description\" content=\"\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link href=\"css/widget.css\" rel=\"stylesheet\" />\n</head>\n<body class=\"s-online\" ng-controller2=\"Widget\">\n\n  <div class=\"title-bar group\">\n    <i class=\"icon-bubble\"></i>\n    <span class=\"user-name\"></span>\n    <div class=\"title-bar-options\">\n      <i class=\"icon-minimize title-bar-icon\"></i>\n      <i class=\"icon-maximize title-bar-icon\"></i>\n      <i class=\"icon-close title-bar-icon\"></i>\n    </div>\n  </div><!-- .title-bar -->\n\n  <div class=\"widget-body\">\n\n    <hr class=\"status-line\" />\n\n    <div class=\"options-bar\">\n      <i class=\"icon-video options-bar-icon\"></i>\n      <i class=\"icon-add-user options-bar-icon\"></i>\n      <i class=\"icon-gear options-bar-icon\"></i>\n    </div>\n\n    <div class=\"messages\">\n      <matt data-\"\">asdf</matt>\n      <div class=\"message message-template\">\n        <div class=\"avatar\"></div>\n        <div class=\"message-content\"></div>\n      </div>\n    </div>\n\n    <div class=\"message-input-wrapper s-focused\">\n      <i class=\"icon icon-smiley\"></i>\n      <div class=\"message-input\" contenteditable=\"true\" data-placeholder=\"Send a message...\"></div>\n      <i class=\"icon icon-upload\"></i>\n    </div>\n\n  </div><!-- .widget-body -->\n\n  <script src=\"vendor/jquery-1.10.2.min.js\"></script>\n  <script src=\"vendor/angular.min.js\"></script>\n  <script src=\"vendor/underscore-min.js\"></script>\n  <script src=\"vendor/socket.io/socket.io.min.js\"></script>\n  <script src=\"vendor/md5.js\"></script>\n  <script src=\"js/widget.js\"></script>\n</body>\n</html>",
 			"file": "widget.html",
-			"file_size": 1718,
-			"file_write_time": 130181321730000000,
 			"settings":
 			{
-				"buffer_size": 1726,
+				"buffer_size": 1650,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "sass/widget.scss",
+			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 5508,
+				"buffer_size": 1662,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "server/app.js",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2552,
+				"buffer_size": 780,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "sass/global.scss",
+			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 478,
+				"buffer_size": 556,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/server.js",
+			"settings":
+			{
+				"buffer_size": 296,
 				"line_ending": "Unix"
 			}
 		}
@@ -795,11 +791,12 @@
 	},
 	"file_history":
 	[
-		"/Users/matt/github/google-chat/js/main.js",
-		"/Users/matt/github/google-chat/index.html",
-		"/Users/matt/github/google-chat/sass/global.scss",
 		"/Users/matt/github/google-chat/sass/widget.scss",
 		"/Users/matt/github/google-chat/server/app.js",
+		"/Users/matt/github/google-chat/js/main.js",
+		"/Users/matt/github/google-chat/templates/matt.html",
+		"/Users/matt/github/google-chat/sass/global.scss",
+		"/Users/matt/github/google-chat/index.html",
 		"/Users/matt/github/google-chat/js/widget.js",
 		"/Users/matt/github/google-chat/widget.html",
 		"/Users/matt/github/google-chat/server/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.min.js",
@@ -921,8 +918,7 @@
 		"/Users/matt/tmp/seattle-coffee-gear/test.rb",
 		"/Users/matt/tmp/seattle-coffee-gear/objects/page.rb",
 		"/Users/matt/tmp/seattle-coffee-gear/objects/std.rb",
-		"/usr/local/opt/mysql/support-files/my-default.cnf",
-		"/usr/local/var/mysql/ls"
+		"/usr/local/opt/mysql/support-files/my-default.cnf"
 	],
 	"find":
 	{
@@ -970,6 +966,27 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"socket",
+			"jivesoftware",
+			"createWidget",
+			"app",
+			"username",
+			"user",
+			"sendToUser",
+			"user",
+			"msg",
+			"message",
+			"io",
+			"parentJQuery",
+			"ready",
+			"instance",
+			"setChatWidgetInstance",
+			"chatWidgetInstance",
+			"ChatWindow",
+			"click",
+			"inject",
+			".chat-widgets",
+			"ChatWindow",
 			"MATT",
 			"asdff",
 			"css",
@@ -1076,28 +1093,7 @@
 			"fffgg",
 			"group",
 			"div",
-			"'",
-			"global",
-			"javascripts",
-			"stylesheets",
-			"global",
-			"screen",
-			"stylesheets",
-			"dev",
-			"fanplayr",
-			"siteId\\b",
-			" siteId, ",
-			"siteId == null",
-			"var siteId = getSiteId(fpUser);",
-			"siteId\\b",
-			"sql += \" WHERE siteId = \" + siteId;",
-			"siteId",
-			"siteId:Int",
-			"siteId",
-			"WHERE",
-			"sql += \" WHERE siteId = \" + siteId;",
-			"null",
-			"alials"
+			"'"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1127,15 +1123,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3859,
+						"buffer_size": 3507,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3743,
-								3743
+								3377,
+								3377
 							]
 						],
 						"settings":
@@ -1144,59 +1140,58 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1869.0,
+						"translation.y": 1471.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "templates/matt.html",
+					"file": "widget.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 109,
+						"buffer_size": 1650,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								43,
-								43
+								249,
+								249
 							]
 						],
 						"settings":
 						{
-							"auto_name": "MATT!@#",
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 120.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "widget.html",
+					"file": "README.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1726,
+						"buffer_size": 1662,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								985,
-								985
+								339,
+								339
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1206,24 +1201,24 @@
 				},
 				{
 					"buffer": 3,
-					"file": "sass/widget.scss",
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5508,
+						"buffer_size": 780,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2032,
-								2032
+								553,
+								553
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1233,19 +1228,19 @@
 				},
 				{
 					"buffer": 4,
-					"file": "server/app.js",
+					"file": "js/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2552,
+						"buffer_size": 556,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								716,
-								716
+								53,
+								53
 							]
 						],
 						"settings":
@@ -1253,31 +1248,31 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 87.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "sass/global.scss",
+					"file": "server/server.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 478,
+						"buffer_size": 296,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								476,
-								476
+								239,
+								239
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1335,6 +1330,30 @@
 		"selected_items":
 		[
 			[
+				"server",
+				"server/server.js"
+			],
+			[
+				"widg",
+				"sass/widget.scss"
+			],
+			[
+				"app",
+				"server/app.js"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"main",
+				"js/main.js"
+			],
+			[
 				"glo",
 				"sass/global.scss"
 			],
@@ -1351,16 +1370,8 @@
 				"sass/widget.scss"
 			],
 			[
-				"widg",
-				"widget.html"
-			],
-			[
 				"global",
 				"sass/global.scss"
-			],
-			[
-				"inde",
-				"index.html"
 			],
 			[
 				"pack",
@@ -1501,10 +1512,6 @@
 			[
 				"ui.less",
 				"www/widgets/genius/less/ui.less"
-			],
-			[
-				"app",
-				"www/widgets/genius/js/app.js"
 			],
 			[
 				"widget.js",
@@ -1833,18 +1840,6 @@
 			[
 				"apput",
 				"site/src/apps/AppUtils.hx"
-			],
-			[
-				"utils.js",
-				"site/www/widgets/common/js/utils.js"
-			],
-			[
-				"genisess",
-				"site/src/fp/data/objects/GeniusSession.hx"
-			],
-			[
-				"decr",
-				"site/www/inc/utils/decrypt_store_session_data.php"
 			]
 		],
 		"width": 0.0
@@ -1854,6 +1849,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"~/work/fanplayr/product/trunk/site/fanplayr-runtime.sublime-project"
+			],
 			[
 				"run",
 				"~/work/fanplayr/product/trunk/site/fanplayr-runtime.sublime-project"
@@ -1865,10 +1864,6 @@
 			[
 				"ru",
 				"~/work/fanplayr/product/trunk/site/fanplayr-runtime.sublime-project"
-			],
-			[
-				"",
-				"~/work/fanplayr/eclipse-workspace/genius-reports/genius-reports.sublime-project"
 			],
 			[
 				"tet",

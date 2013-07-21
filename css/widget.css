@@ -355,14 +355,14 @@ table {
   border-spacing: 0;
 }
 
-/* line 10, ../sass/widget.scss */
+/* line 11, ../sass/widget.scss */
 html, body {
   height: 100%;
   background-color: #e5e5e5;
   overflow: hidden;
 }
 
-/* line 21, ../sass/widget.scss */
+/* line 22, ../sass/widget.scss */
 .title-bar {
   position: relative;
   height: 36px;
@@ -373,8 +373,11 @@ html, body {
   font-size: 13px;
   line-height: 36px;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
-/* line 35, ../sass/widget.scss */
+/* line 36, ../sass/widget.scss */
 .title-bar .icon-bubble {
   position: absolute;
   left: 7px;
@@ -382,7 +385,7 @@ html, body {
   margin-top: -12px;
 }
 
-/* line 44, ../sass/widget.scss */
+/* line 47, ../sass/widget.scss */
 .title-bar-options {
   position: absolute;
   top: 50%;
@@ -390,46 +393,46 @@ html, body {
   margin-top: -12px;
 }
 
-/* line 51, ../sass/widget.scss */
+/* line 54, ../sass/widget.scss */
 .widget-body {
   height: 340px;
   border-left: 1px solid #c3c3c3;
   border-right: 1px solid #c3c3c3;
 }
 
-/* line 57, ../sass/widget.scss */
+/* line 60, ../sass/widget.scss */
 .status-line {
   height: 0;
   margin: 0;
   border: none;
 }
-/* line 62, ../sass/widget.scss */
+/* line 65, ../sass/widget.scss */
 .s-online .status-line {
   height: 2px;
   background-color: #53a93f;
 }
 
-/* line 68, ../sass/widget.scss */
+/* line 71, ../sass/widget.scss */
 .options-bar {
   position: relative;
   height: 33px;
   border-bottom: 1px solid #cdcdcd;
   background-color: #e5e5e5;
 }
-/* line 75, ../sass/widget.scss */
+/* line 78, ../sass/widget.scss */
 .options-bar .icon-video {
   left: 7px;
 }
-/* line 79, ../sass/widget.scss */
+/* line 82, ../sass/widget.scss */
 .options-bar .icon-add-user {
   left: 38px;
 }
-/* line 83, ../sass/widget.scss */
+/* line 86, ../sass/widget.scss */
 .options-bar .icon-gear {
   right: 7px;
 }
 
-/* line 88, ../sass/widget.scss */
+/* line 91, ../sass/widget.scss */
 .messages {
   height: 227px;
   margin-right: 1px;
@@ -443,26 +446,26 @@ html, body {
   padding: 20px;
 }
 
-/* line 106, ../sass/widget.scss */
+/* line 109, ../sass/widget.scss */
 ::-webkit-scrollbar {
   position: absolute;
   right: 1px;
   width: 7px;
 }
-/* line 111, ../sass/widget.scss */
+/* line 114, ../sass/widget.scss */
 ::-webkit-scrollbar:hover {
   border-left: 1px solid #c2c2c2;
   background-color: #d9d9d9;
 }
 
-/* line 117, ../sass/widget.scss */
+/* line 120, ../sass/widget.scss */
 ::-webkit-scrollbar-thumb {
   border-top: 1px solid #a4a4a4;
   border-left: 1px solid #a4a4a4;
   background-color: #b6b6b6;
 }
 
-/* line 125, ../sass/widget.scss */
+/* line 128, ../sass/widget.scss */
 .message {
   position: relative;
   float: right;
@@ -470,16 +473,16 @@ html, body {
   margin-bottom: 8px;
 }
 
-/* line 132, ../sass/widget.scss */
+/* line 135, ../sass/widget.scss */
 .message-template {
   display: none;
 }
 
-/* line 136, ../sass/widget.scss */
+/* line 139, ../sass/widget.scss */
 .message-other {
   float: left;
 }
-/* line 139, ../sass/widget.scss */
+/* line 142, ../sass/widget.scss */
 .message-other .avatar {
   right: auto;
   bottom: auto;
@@ -490,14 +493,14 @@ html, body {
   border-radius: 2px 0 0 2px;
   background-image: url(https://lh6.googleusercontent.com/-4L3qQuPg25k/AAAAAAAAAAI/AAAAAAAADj8/um-3swjzQt8/s32-c-k/photo.jpg);
 }
-/* line 146, ../sass/widget.scss */
+/* line 149, ../sass/widget.scss */
 .message-other .avatar:after {
   right: 0;
   top: 0;
   bottom: auto;
   background-position: -8px -32px;
 }
-/* line 154, ../sass/widget.scss */
+/* line 157, ../sass/widget.scss */
 .message-other .message-content {
   margin-left: 32px;
   margin-right: 0;
@@ -508,7 +511,7 @@ html, body {
   border-radius: 0 2px 2px 2px;
 }
 
-/* line 161, ../sass/widget.scss */
+/* line 164, ../sass/widget.scss */
 .message-content {
   margin-right: 32px;
   padding: 7px 9px 11px;
@@ -524,14 +527,14 @@ html, body {
   font-size: 13px;
 }
 
-/* line 173, ../sass/widget.scss */
+/* line 176, ../sass/widget.scss */
 .message-date {
   margin-top: 5px;
   color: rgba(0, 0, 0, 0.3);
   font-size: 11px;
 }
 
-/* line 179, ../sass/widget.scss */
+/* line 182, ../sass/widget.scss */
 .avatar {
   position: absolute;
   right: 0;
@@ -545,7 +548,7 @@ html, body {
   border-radius: 0 2px 2px 0;
   background-image: url(https://lh4.googleusercontent.com/-nDBRo-_0z7k/AAAAAAAAAAI/AAAAAAAAABk/xoYkAi7Z4RY/s32-c-k/photo.jpg);
 }
-/* line 190, ../sass/widget.scss */
+/* line 193, ../sass/widget.scss */
 .avatar:after {
   position: absolute;
   bottom: -1px;
@@ -556,12 +559,12 @@ html, body {
   content: "";
   background: url("../images/sprite.png") -9px -8px no-repeat;
 }
-/* line 192, ../sass/widget.scss */
+/* line 195, ../sass/widget.scss */
 .avatar:after .message {
   float: right;
 }
 
-/* line 217, ../sass/widget.scss */
+/* line 220, ../sass/widget.scss */
 [class^="icon-"], [class*="icon-"] {
   display: inline-block;
   width: 24px;
@@ -569,12 +572,12 @@ html, body {
   background: url("../images/sprite.png") no-repeat;
 }
 
-/* line 226, ../sass/widget.scss */
+/* line 229, ../sass/widget.scss */
 .title-bar-icon {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
-/* line 228, ../sass/widget.scss */
+/* line 231, ../sass/widget.scss */
 .title-bar-icon:hover {
   background-color: rgba(255, 255, 255, 0.3);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
@@ -582,7 +585,7 @@ html, body {
   cursor: pointer;
 }
 
-/* line 235, ../sass/widget.scss */
+/* line 238, ../sass/widget.scss */
 .options-bar-icon {
   position: absolute;
   top: 50%;
@@ -590,73 +593,78 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=55);
   opacity: 0.55;
 }
-/* line 241, ../sass/widget.scss */
+/* line 244, ../sass/widget.scss */
 .options-bar-icon:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   cursor: pointer;
 }
 
-/* line 247, ../sass/widget.scss */
+/* line 250, ../sass/widget.scss */
 .icon-bubble {
   background-position: 0 -48px;
 }
 
-/* line 248, ../sass/widget.scss */
+/* line 251, ../sass/widget.scss */
 .icon-minimize {
   background-position: -24px 0;
 }
 
-/* line 249, ../sass/widget.scss */
+/* line 252, ../sass/widget.scss */
+.icon-restore {
+  background-position: -48px 0;
+}
+
+/* line 253, ../sass/widget.scss */
 .icon-maximize {
   background-position: -72px 0;
 }
 
-/* line 250, ../sass/widget.scss */
+/* line 254, ../sass/widget.scss */
 .icon-close {
   background-position: -120px 0;
 }
 
-/* line 251, ../sass/widget.scss */
+/* line 255, ../sass/widget.scss */
 .icon-video {
   background-position: -24px -24px;
 }
 
-/* line 252, ../sass/widget.scss */
+/* line 256, ../sass/widget.scss */
 .icon-gear {
   background-position: -72px -24px;
 }
 
-/* line 253, ../sass/widget.scss */
+/* line 257, ../sass/widget.scss */
 .icon-add-user {
   background-position: -120px -24px;
 }
 
-/* line 254, ../sass/widget.scss */
+/* line 258, ../sass/widget.scss */
 .icon-smiley {
   background-position: -48px -48px;
 }
 
-/* line 255, ../sass/widget.scss */
+/* line 259, ../sass/widget.scss */
 .icon-upload {
   background-position: -96px -48px;
 }
 
-/* line 259, ../sass/widget.scss */
+/* line 263, ../sass/widget.scss */
 .group:before, .group:after {
   display: table;
   content: " ";
 }
-/* line 263, ../sass/widget.scss */
+/* line 267, ../sass/widget.scss */
 .group:after {
   clear: both;
 }
-/* line 266, ../sass/widget.scss */
+/* line 270, ../sass/widget.scss */
 .group {
   *zoom: 1;
 }
 
-/* line 271, ../sass/widget.scss */
+/* line 275, ../sass/widget.scss */
 .message-input-wrapper {
   position: absolute;
   left: 0;
@@ -667,36 +675,42 @@ html, body {
   border-top: 1px solid #c3c3c3;
   background-color: #fff;
 }
-/* line 283, ../sass/widget.scss */
+@media screen and (max-height: 100px) {
+  /* line 275, ../sass/widget.scss */
+  .message-input-wrapper {
+    display: none;
+  }
+}
+/* line 291, ../sass/widget.scss */
 .message-input-wrapper.s-focused {
   border: 1px solid #4d90fe;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
 }
-/* line 288, ../sass/widget.scss */
+/* line 296, ../sass/widget.scss */
 .message-input-wrapper .icon {
   position: absolute;
   top: 8px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
-/* line 295, ../sass/widget.scss */
+/* line 303, ../sass/widget.scss */
 .message-input-wrapper .icon:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   cursor: pointer;
 }
-/* line 301, ../sass/widget.scss */
+/* line 309, ../sass/widget.scss */
 .message-input-wrapper .icon-smiley {
   left: 6px;
 }
-/* line 305, ../sass/widget.scss */
+/* line 313, ../sass/widget.scss */
 .message-input-wrapper .icon-upload {
   right: 6px;
 }
 
-/* line 310, ../sass/widget.scss */
+/* line 318, ../sass/widget.scss */
 .message-input {
   margin: 8px 8px 8px 32px;
   padding: 3px;

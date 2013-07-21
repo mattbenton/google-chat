@@ -11,9 +11,15 @@
 .chat-widget {
   position: relative;
   top: 4px;
+  width: 262px;
+  height: 380px;
   // border: 1px solid green;
   margin-right: 15px;
   @include box-shadow(0 0 2px fade-out(#000, 0.7));
+
+  &.s-minimized {
+    height: 36px;
+  }
 }
 
 .widget-input {

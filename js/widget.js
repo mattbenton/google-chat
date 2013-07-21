@@ -1,8 +1,6 @@
 $(function(){
   var $window = $(window);
 
-  // var instance = window.chatWidgetInstance;
-
   var widgetId = -1;
 
   var email = null;
@@ -25,13 +23,14 @@ $(function(){
   $window.on('resize', resize);
 
   $closeBtn.on('click', function() {
-    try {
-      var top = window.top;
-      if ( top && top.closeWidget ) {
-        top.closeWidget(widgetId);
-      }
-    } catch ( ex ) {
-    }
+    post('close');
+    // try {
+    //   var top = window.top;
+    //   if ( top && top.closeWidget ) {
+    //     top.closeWidget(widgetId);
+    //   }
+    // } catch ( ex ) {
+    // }
   });
 
   function init () {
@@ -64,15 +63,45 @@ $(function(){
     }
   }
 
-  $('.icon-maximize').click(function() {
-    var options = 'menubar=no,location=no,resizable=yes,scrollbars=no,status=no,dependent=yes,width=262,height=380';
-    var ref = window.open(location.href, 'widget', options);
+  var $titleBar       = $('.title-bar');
+  var $minimizeToggle = $('.icon-minimize');
+  var $maximizeBtn    = $('.icon-maximize');
+
+  var toggleMinimize = function ( doMinimize ) {
+    var doMinimize;
+    if ( doMinimize === undefined ) {
+      doMinimize = !$minimizeToggle.hasClass('icon-restore');
+    } else {
+      doMinimize = !!doMinimize;
+    }
+
+    $minimizeToggle.toggleClass('icon-restore', doMinimize);
+    post(doMinimize ? 'minimize' : 'restore');
+  };
+
+  $minimizeToggle.click(function ( event ) {
+    event.stopPropagation();
+    toggleMinimize();
   });
 
-  $('.icon-minimize').click(function() {
-    // console.log(window.chatWidgetInstance);
-    triggerParentEvent('chat-minimize');
+  $maximizeBtn.click(function ( event ) {
+    event.stopPropagation();
+    var options = 'menubar=no,location=no,resizable=yes,scrollbars=no,status=no,dependent=yes,width=262,height=380';
+    var ref = window.open(location.href, 'widget', options);
+    toggleMinimize(true);
   });
+
+  
+  $titleBar.click(function() {
+    toggleMinimize();
+  });
+
+  var post = function ( data ) {
+    var parent = window.opener || window.parent;
+    if ( parent && parent.postMessage ) {
+      parent.postMessage({ id: widgetId, type: data }, '*');
+    }
+  };
 
   init();
 
@@ -105,8 +134,6 @@ $(function(){
   socket.on('msg', function ( msg ) {
     addMessage(msg);
   });
-
-  // addMessage('Hey Rajiv!');
 
   var sanitizeInput = function ( html ) {
     // Converts <br>'s and opening <div>'s to new lines.
