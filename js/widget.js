@@ -56,13 +56,6 @@ $(function(){
     return 'http://www.gravatar.com/avatar/' + md5(email) + '?s=32';
   }
 
-  function triggerParentEvent ( type ) {
-    var parentJQuery = window.parent.jQuery;
-    if ( parentJQuery ) {
-      parentJQuery(window.parent.document).trigger(type);
-    }
-  }
-
   var $titleBar       = $('.title-bar');
   var $minimizeToggle = $('.icon-minimize');
   var $maximizeBtn    = $('.icon-maximize');
@@ -91,7 +84,6 @@ $(function(){
     toggleMinimize(true);
   });
 
-  
   $titleBar.click(function() {
     toggleMinimize();
   });
