@@ -5,34 +5,23 @@ $(function(){
 
   var email = null;
 
-  var $head            = $('head');
-  var $userName        = $('.user-name');
-  var $messages        = $('.messages');
-  var $messageTemplate = $('.message:first').remove();
-  var $inputWrapper    = $('.message-input-wrapper');
-  var $input           = $('.message-input');
+  // Cache elements for speed. In most cases I'm using classes instead of IDs
+  // to prevent specificity wars.
+  var $head               = $('head');
+  var $recipientName      = $('.recipient-name');
+  var $messages           = $('.messages');
+  var $messageTemplate    = $('.message-template').remove().removeClass('message-template');
+  var $inputWrapper       = $('.message-input-wrapper');
+  var $input              = $('.message-input');
+  var $titleBar           = $('.title-bar');
+  var $minimizeRestoreBtn = $('.icon-minimize');
+  var $maximizeBtn        = $('.icon-maximize');
+  var $closeBtn           = $('.icon-close');
+  var $uploadBtn          = $('.icon-upload');
 
-  var $closeBtn = $('.icon-close');
+  // ## Controller
 
-  var resize = _.debounce(function() {
-    var clientHeight = $window.height();
-    var inputHeight  = $inputWrapper.height();
-    $messages.css('height', clientHeight - inputHeight - 115);
-  }, 300);
-
-  $window.on('resize', resize);
-
-  $closeBtn.on('click', function() {
-    post('close');
-    // try {
-    //   var top = window.top;
-    //   if ( top && top.closeWidget ) {
-    //     top.closeWidget(widgetId);
-    //   }
-    // } catch ( ex ) {
-    // }
-  });
-
+  // Setup the widget. Gets invoked at end of file.
   function init () {
     var url = location.href;
     var params = {};
@@ -44,98 +33,87 @@ $(function(){
     widgetId = parseInt(params.id, 10);
 
     if ( params.user ) {
-      $userName.text(params.user);
+      $recipientName.text(params.user);
     }
 
     if ( params.email ) {
       email = params.email;
     }
+
+    $input.focus();
   }
 
-  function getGravatar ( email ) {
-    return 'http://www.gravatar.com/avatar/' + md5(email) + '?s=32';
-  }
+  // Sends an event to the widget manager in the parent window using
+  // `postMessage()` for communication.
+  var emitOnParent = function ( eventType, data ) {
+    var parent = window.opener || window.parent;
+    if ( parent && parent.postMessage ) {
+      parent.postMessage({
+        widgetId: widgetId,
+        type:     eventType,
+        data:     data
+      }, '*');
+    }
+  };
 
-  var $titleBar       = $('.title-bar');
-  var $minimizeToggle = $('.icon-minimize');
-  var $maximizeBtn    = $('.icon-maximize');
+  // Adjusts the height of the message area to fit within the widget,
+  // defering actual resizing until at least 300ms after the last time
+  // the function is invoked. 
+  var resizeMessageArea = _.debounce(function() {
+    var clientHeight = $window.height();
+    var inputHeight  = $inputWrapper.height();
+    $messages.css('height', clientHeight - inputHeight - 115);
+  }, 300);
+
+  // Adds a new message to the message area.
+  var addMessage = function ( msg ) {
+    var $msg = $messageTemplate.clone();
+
+    if ( msg.email !== email ) {
+      $msg.addClass('message-recipient');
+    }
+
+    // Remove init class after the DOM has updated for the sliding transition.
+    setTimeout(function() {
+      $msg.removeClass('message-init');
+    }, 0);
+
+    /*
+    $msg.find('.avatar').css({
+      backgroundImage: 'url(' + getGravatar(msg.email) + ')'
+    });
+    */
+
+    $msg.find('.message-content').html(htmlify(msg.message));
+
+    $msg.appendTo($messages);
+
+    // Force the message area to scroll to the bottom.
+    $messages.scrollTop($messages[0].scrollHeight);
+  };
 
   var toggleMinimize = function ( doMinimize ) {
-    var doMinimize;
     if ( doMinimize === undefined ) {
-      doMinimize = !$minimizeToggle.hasClass('icon-restore');
+      doMinimize = !$minimizeRestoreBtn.hasClass('icon-restore');
     } else {
       doMinimize = !!doMinimize;
     }
 
-    $minimizeToggle.toggleClass('icon-restore', doMinimize);
-    post(doMinimize ? 'minimize' : 'restore');
+    $minimizeRestoreBtn.toggleClass('icon-restore', doMinimize);
+    emitOnParent(doMinimize ? 'minimize' : 'restore');
   };
 
-  $minimizeToggle.click(function ( event ) {
-    event.stopPropagation();
-    toggleMinimize();
-  });
+  var checkInput = _.throttle(function() {
+    var hasInput = !!stripHtml($input.html());
+    $inputWrapper.toggleClass('s-has-input', hasInput);
+  }, 300);
 
-  $maximizeBtn.click(function ( event ) {
-    event.stopPropagation();
-    var options = 'menubar=no,location=no,resizable=yes,scrollbars=no,status=no,dependent=yes,width=262,height=380';
-    var ref = window.open(location.href, 'widget', options);
-    toggleMinimize(true);
-  });
+  // ## Event Handlers
 
-  $titleBar.click(function() {
-    toggleMinimize();
-  });
-
-  var post = function ( data ) {
-    var parent = window.opener || window.parent;
-    if ( parent && parent.postMessage ) {
-      parent.postMessage({ id: widgetId, type: data }, '*');
-    }
-  };
-
-  init();
-
-  var knownEmails = {};
-
-  var $style = $('<style>').appendTo('head');
-
-  var addMessage = function ( msg ) {
-    var $msg = $messageTemplate.clone();
-
-    $msg.removeClass('message-template');
-    if ( msg.email !== email ) {
-      $msg.addClass('message-other');
-    }
-
-    $msg.find('.avatar').css({
-      backgroundImage: 'url(' + getGravatar(msg.email) + ')'
-    });
-
-    var html = msg.message.replace(/\n/g, '<br/>');
-    html += '<div class="message-date">Now</div>';
-    $msg.find('.message-content').html(html);
-
-    $msg.appendTo($messages);
-
-    $messages.scrollTop($messages[0].scrollHeight);
-  };
-
-  var socket = io.connect('http://' + location.hostname + ':8080');
-  socket.on('msg', function ( msg ) {
-    addMessage(msg);
-  });
-
-  var sanitizeInput = function ( html ) {
-    // Converts <br>'s and opening <div>'s to new lines.
-    var text = html.replace(/<br>/gi, '\n');
-    text = text.replace(/<div\b/gi, '\n<div');
-    // Strips all remaining HTML tags.
-    return text.replace(/(<([^>]+)>)/ig, '');
-  };
-
-  $input.on('keydown', function ( event ) {
+  // Handles keyboard input, submitting a message when the user presses
+  // the `ENTER` key. Holding the `CONTROL` key while pressing `ENTER`
+  // allows newlines to be added.
+  $input.keydown(function ( event ) {
     if ( event.keyCode === 13 && !event.ctrlKey ) {
       event.preventDefault();
       var html = $input.html();
@@ -155,10 +133,68 @@ $(function(){
         });
       }
     }
-    resize();
+
+    resizeMessageArea();
   });
 
-  $input.focus();
+  $input.keyup(checkInput);
 
-  resize();
+  $minimizeRestoreBtn.click(function ( event ) {
+    event.stopPropagation();
+    toggleMinimize();
+  });
+
+  $maximizeBtn.click(function ( event ) {
+    event.stopPropagation();
+    var options = 'menubar=no,location=no,resizable=yes,scrollbars=no,status=no,dependent=yes,width=262,height=380';
+    var ref = window.open(location.href, 'widget', options);
+    toggleMinimize(true);
+  });
+
+  $titleBar.click(function() {
+    toggleMinimize();
+  });
+
+  $closeBtn.click(function ( event ) {
+    event.stopPropagation();
+    emitOnParent('close');
+  });
+
+  $window.on('resize', resizeMessageArea);
+
+  // ## Client
+
+  var socket = io.connect('http://' + location.hostname + ':8080');
+  socket.on('msg', function ( msg ) {
+    addMessage(msg);
+  });
+
+  // ## Helpers
+
+  // Transforms HTML input from the contenteditable element into text to
+  // be sent over the wire.
+  // Converts `<br>` and opening `<div>` tags to new lines, then strips all
+  // remaining HTML tags.
+  var sanitizeInput = function ( html ) {
+    var text = html.replace(/<br>/gi, '\n');
+    text = text.replace(/<div\b/gi, '\n<div');
+    return stripHtml(text);
+  };
+
+  var stripHtml = function ( html ) {
+    return html.replace(/(<([^>]+)>)/ig, '');
+  };
+
+  // Transforms sanitized input back into HTML for rendering.
+  var htmlify = function ( text ) {
+    return text.replace(/\n/g, '<br/>');
+  };
+
+  /*
+  function getGravatar ( email ) {
+    return 'http://www.gravatar.com/avatar/' + md5(email) + '?s=32';
+  }
+  */
+
+  init();
 });

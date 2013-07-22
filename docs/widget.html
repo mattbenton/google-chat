@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>widget.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="main.html">
+                main.js
+              </a>
+            
+              
+              <a class="source" href="widget.html">
+                widget.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>widget.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>$(<span class="keyword">function</span>(){
+  <span class="keyword">var</span> $window = $(window);
+
+  <span class="keyword">var</span> widgetId = -<span class="number">1</span>;
+
+  <span class="keyword">var</span> email = <span class="literal">null</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Cache elements for speed. In most cases I&#39;m using classes instead of IDs
+to prevent specificity wars.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> $head               = $(<span class="string">'head'</span>);
+  <span class="keyword">var</span> $recipientName      = $(<span class="string">'.recipient-name'</span>);
+  <span class="keyword">var</span> $messages           = $(<span class="string">'.messages'</span>);
+  <span class="keyword">var</span> $messageTemplate    = $(<span class="string">'.message-template'</span>).remove().removeClass(<span class="string">'message-template'</span>);
+  <span class="keyword">var</span> $inputWrapper       = $(<span class="string">'.message-input-wrapper'</span>);
+  <span class="keyword">var</span> $input              = $(<span class="string">'.message-input'</span>);
+  <span class="keyword">var</span> $titleBar           = $(<span class="string">'.title-bar'</span>);
+  <span class="keyword">var</span> $minimizeRestoreBtn = $(<span class="string">'.icon-minimize'</span>);
+  <span class="keyword">var</span> $maximizeBtn        = $(<span class="string">'.icon-maximize'</span>);
+  <span class="keyword">var</span> $closeBtn           = $(<span class="string">'.icon-close'</span>);
+  <span class="keyword">var</span> $uploadBtn          = $(<span class="string">'.icon-upload'</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <h2>Controller</h2>
+<p>Setup the widget. Gets invoked at end of file.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="function"><span class="keyword">function</span> <span class="title">init</span> <span class="params">()</span> {</span>
+    <span class="keyword">var</span> url = location.href;
+    <span class="keyword">var</span> params = {};
+    url.replace(<span class="regexp">/([a-z0-9]+)=([^&amp;]+)/gi</span>, <span class="function"><span class="keyword">function</span> <span class="params">( line, key, value )</span> {</span>
+      value = decodeURIComponent(value);
+      params[key] = value;
+    });
+
+    widgetId = parseInt(params.id, <span class="number">10</span>);
+
+    <span class="keyword">if</span> ( params.user ) {
+      $recipientName.text(params.user);
+    }
+
+    <span class="keyword">if</span> ( params.email ) {
+      email = params.email;
+    }
+
+    $input.focus();
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Sends an event to the widget manager in the parent window using
+<code>postMessage()</code> for communication.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> emitOnParent = <span class="function"><span class="keyword">function</span> <span class="params">( eventType, data )</span> {</span>
+    <span class="keyword">var</span> parent = window.opener || window.parent;
+    <span class="keyword">if</span> ( parent &amp;&amp; parent.postMessage ) {
+      parent.postMessage({
+        widgetId: widgetId,
+        type:     eventType,
+        data:     data
+      }, <span class="string">'*'</span>);
+    }
+  };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Adjusts the height of the message area to fit within the widget,
+defering actual resizing until at least 300ms after the last time
+the function is invoked. </p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> resizeMessageArea = _.debounce(<span class="keyword">function</span>() {
+    <span class="keyword">var</span> clientHeight = $window.height();
+    <span class="keyword">var</span> inputHeight  = $inputWrapper.height();
+    $messages.css(<span class="string">'height'</span>, clientHeight - inputHeight - <span class="number">115</span>);
+  }, <span class="number">300</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Adds a new message to the message area.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> addMessage = <span class="function"><span class="keyword">function</span> <span class="params">( msg )</span> {</span>
+    <span class="keyword">var</span> $msg = $messageTemplate.clone();
+
+    <span class="keyword">if</span> ( msg.email !== email ) {
+      $msg.addClass(<span class="string">'message-recipient'</span>);
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>Remove init class after the DOM has updated for the sliding transition.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    setTimeout(<span class="keyword">function</span>() {
+      $msg.removeClass(<span class="string">'message-init'</span>);
+    }, <span class="number">0</span>);
+
+    <span class="comment">/*
+    $msg.find('.avatar').css({
+      backgroundImage: 'url(' + getGravatar(msg.email) + ')'
+    });
+    */</span>
+
+    $msg.find(<span class="string">'.message-content'</span>).html(htmlify(msg.message));
+
+    $msg.appendTo($messages);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>Force the message area to scroll to the bottom.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    $messages.scrollTop($messages[<span class="number">0</span>].scrollHeight);
+  };
+
+  <span class="keyword">var</span> toggleMinimize = <span class="function"><span class="keyword">function</span> <span class="params">( doMinimize )</span> {</span>
+    <span class="keyword">if</span> ( doMinimize === <span class="literal">undefined</span> ) {
+      doMinimize = !$minimizeRestoreBtn.hasClass(<span class="string">'icon-restore'</span>);
+    } <span class="keyword">else</span> {
+      doMinimize = !!doMinimize;
+    }
+
+    $minimizeRestoreBtn.toggleClass(<span class="string">'icon-restore'</span>, doMinimize);
+    emitOnParent(doMinimize ? <span class="string">'minimize'</span> : <span class="string">'restore'</span>);
+  };
+
+  <span class="keyword">var</span> checkInput = _.throttle(<span class="keyword">function</span>() {
+    <span class="keyword">var</span> hasInput = !!stripHtml($input.html());
+    $inputWrapper.toggleClass(<span class="string">'s-has-input'</span>, hasInput);
+  }, <span class="number">300</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <h2>Event Handlers</h2>
+<p>Handles keyboard input, submitting a message when the user presses
+the <code>ENTER</code> key. Holding the <code>CONTROL</code> key while pressing <code>ENTER</code>
+allows newlines to be added.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  $input.keydown(<span class="function"><span class="keyword">function</span> <span class="params">( event )</span> {</span>
+    <span class="keyword">if</span> ( event.keyCode === <span class="number">13</span> &amp;&amp; !event.ctrlKey ) {
+      event.preventDefault();
+      <span class="keyword">var</span> html = $input.html();
+      <span class="keyword">if</span> ( html ) {
+        <span class="keyword">var</span> html = $input.html();
+        <span class="keyword">var</span> text = sanitizeInput(html);
+        $input.html(<span class="string">''</span>);
+
+        addMessage({
+          email:   email,
+          message: text
+        });
+
+        socket.emit(<span class="string">'msg'</span>, {
+          email: email,
+          message: text
+        });
+      }
+    }
+
+    resizeMessageArea();
+  });
+
+  $input.keyup(checkInput);
+
+  $minimizeRestoreBtn.click(<span class="function"><span class="keyword">function</span> <span class="params">( event )</span> {</span>
+    event.stopPropagation();
+    toggleMinimize();
+  });
+
+  $maximizeBtn.click(<span class="function"><span class="keyword">function</span> <span class="params">( event )</span> {</span>
+    event.stopPropagation();
+    <span class="keyword">var</span> options = <span class="string">'menubar=no,location=no,resizable=yes,scrollbars=no,status=no,dependent=yes,width=262,height=380'</span>;
+    <span class="keyword">var</span> ref = window.open(location.href, <span class="string">'widget'</span>, options);
+    toggleMinimize(<span class="literal">true</span>);
+  });
+
+  $titleBar.click(<span class="keyword">function</span>() {
+    toggleMinimize();
+  });
+
+  $closeBtn.click(<span class="function"><span class="keyword">function</span> <span class="params">( event )</span> {</span>
+    event.stopPropagation();
+    emitOnParent(<span class="string">'close'</span>);
+  });
+
+  $window.on(<span class="string">'resize'</span>, resizeMessageArea);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <h2>Client</h2>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> socket = io.connect(<span class="string">'http://'</span> + location.hostname + <span class="string">':8080'</span>);
+  socket.on(<span class="string">'msg'</span>, <span class="function"><span class="keyword">function</span> <span class="params">( msg )</span> {</span>
+    addMessage(msg);
+  });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap for-h2">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <h2>Helpers</h2>
+<p>Transforms HTML input from the contenteditable element into text to
+be sent over the wire.
+Converts <code>&lt;br&gt;</code> and opening <code>&lt;div&gt;</code> tags to new lines, then strips all
+remaining HTML tags.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> sanitizeInput = <span class="function"><span class="keyword">function</span> <span class="params">( html )</span> {</span>
+    <span class="keyword">var</span> text = html.replace(<span class="regexp">/&lt;br&gt;/gi</span>, <span class="string">'\n'</span>);
+    text = text.replace(<span class="regexp">/&lt;div\b/gi</span>, <span class="string">'\n&lt;div'</span>);
+    <span class="keyword">return</span> stripHtml(text);
+  };
+
+  <span class="keyword">var</span> stripHtml = <span class="function"><span class="keyword">function</span> <span class="params">( html )</span> {</span>
+    <span class="keyword">return</span> html.replace(<span class="regexp">/(&lt;([^&gt;]+)&gt;)/ig</span>, <span class="string">''</span>);
+  };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>Transforms sanitized input back into HTML for rendering.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> htmlify = <span class="function"><span class="keyword">function</span> <span class="params">( text )</span> {</span>
+    <span class="keyword">return</span> text.replace(<span class="regexp">/\n/g</span>, <span class="string">'&lt;br/&gt;'</span>);
+  };
+
+  <span class="comment">/*
+  function getGravatar ( email ) {
+    return 'http://www.gravatar.com/avatar/' + md5(email) + '?s=32';
+  }
+  */</span>
+
+  init();
+});</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

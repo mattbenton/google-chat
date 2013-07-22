@@ -7,6 +7,9 @@ io.configure(function() {
 });
 
 io.sockets.on('connection', function ( socket ) {
+  // Simply broadcast each message from a client to all other clients.
+  // Messages have the format `{ email: "...", message: "..." }` where
+  // `email` is used to identify the sender.
   socket.on('msg', function ( msg ) {
     console.log('broadcast: ', msg);
     socket.broadcast.emit('msg', msg);

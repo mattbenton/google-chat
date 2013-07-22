@@ -12,7 +12,7 @@
 
   <div class="title-bar group">
     <i class="icon-bubble"></i>
-    <span class="user-name"></span>
+    <span class="recipient-name"></span>
     <div class="title-bar-options">
       <i class="icon-minimize title-bar-icon"></i>
       <i class="icon-maximize title-bar-icon"></i>
@@ -31,16 +31,19 @@
     </div>
 
     <div class="messages">
-      <!-- <matt data-"">asdf</matt> -->
-      <div class="message message-template">
+      <div class="message message-init message-template">
         <div class="avatar"></div>
-        <div class="message-content"></div>
+        <div class="message-content-wrapper">
+          <div class="message-content"></div>
+          <div class="message-date">Now</div>
+        </div>
       </div>
     </div>
 
     <div class="message-input-wrapper s-focused">
       <i class="icon icon-smiley"></i>
-      <div class="message-input" contenteditable="true" data-placeholder="Send a message..."></div>
+      <div class="message-input" contenteditable="true"></div>
+      <div class="message-placeholder">Send a message...</div>
       <i class="icon icon-upload"></i>
     </div>
 

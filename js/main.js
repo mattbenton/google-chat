@@ -4,6 +4,8 @@ $(function() {
 
   var widgets = {};
 
+  // Creates a new widget and assigns it a unique ID so that
+  // events sent from it can be matched to the assocated element.
   function createWidget ( user, email ) {
     var id = widgetCount++;
 
@@ -18,9 +20,10 @@ $(function() {
     widgets[id] = $widget;
   }
 
+  // Listen for events fired from widgets via `postMessage()`.
   $(window).on('message', function ( event ) {
     var msg = event.originalEvent.data;
-    var $widget = widgets[msg.id];
+    var $widget = widgets[msg.widgetId];
 
     if ( !$widget ) {
       return;
@@ -39,5 +42,6 @@ $(function() {
     }
   });
 
+  // Creating globals is usually bad pratice, but for this demo it's fine.
   window.createWidget = createWidget;
 });

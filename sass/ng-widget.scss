@@ -1,0 +1,329 @@
+@import "normalize";
+@import "compass/css3";
+@import "compass/css3/user-interface";
+
+$sprite: "../images/sprite.png";
+$icon-size: 24px;
+
+$widget-width: 262px;
+$widget-height: 380px;
+
+html, body {
+  height: 100%;
+  background-color: #e5e5e5;
+
+  overflow: hidden;
+}
+
+// * {
+//   box-sizing: border-box;
+// }
+
+.title-bar {
+  position: relative;
+  height: 36px;
+  padding-left: $icon-size + 7;
+
+  background-color: #404040;
+
+  color: #fff;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  line-height: 36px;
+
+  cursor: pointer;
+
+  .icon-bubble {
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    margin-top: -$icon-size / 2;
+    // border: 2px solid red;
+  }
+
+  @include user-select(none);
+}
+
+.title-bar-options {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  margin-top: -$icon-size / 2;
+}
+
+.widget-body {
+  height: $widget-height - 40;
+  border-left: 1px solid #c3c3c3;
+  border-right: 1px solid #c3c3c3;
+}
+
+.status-line {
+  height: 0;
+  margin: 0;
+  border: none;
+
+  .s-online & {
+    height: 2px;
+    background-color: #53a93f;
+  }
+}
+
+.options-bar {
+  position: relative;
+  height: 33px;
+
+  border-bottom: 1px solid #cdcdcd;
+  background-color: #e5e5e5;
+
+  .icon-video {
+    left: 7px;
+  }
+
+  .icon-add-user {
+    left: $icon-size + 14;
+  }
+
+  .icon-gear {
+    right: 7px;
+  }
+}
+
+.messages {
+  height: 227px;
+
+  // border: 1px solid red;
+
+  // For nice little scrollbar gap.
+  margin-right: 1px;
+
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+
+  @include box-shadow(inset 0 1px 2px fade-out(#000, 0.93));
+  background-color: #e5e5e5;
+  padding: 20px;
+}
+
+::-webkit-scrollbar {
+    position: absolute;
+    right: 1px;
+    width: 7px;
+
+    &:hover {
+      border-left: 1px solid #c2c2c2;
+      background-color: #d9d9d9;
+    }
+}
+
+::-webkit-scrollbar-thumb {
+  border-top: 1px solid #a4a4a4;
+  border-left: 1px solid #a4a4a4;
+  background-color: #b6b6b6;
+    // border-radius: 10px;
+    // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+.message {
+  position: relative;
+  float: right;
+  clear: both;
+  margin-bottom: 8px;
+}
+
+.message-template {
+  display: none;
+}
+
+.message-other {
+  float: left;
+
+  .avatar {
+    right: auto;
+    bottom: auto;
+    // float: left;
+    @include border-radius(2px 0 0 2px);
+    background-image: url(https://lh6.googleusercontent.com/-4L3qQuPg25k/AAAAAAAAAAI/AAAAAAAADj8/um-3swjzQt8/s32-c-k/photo.jpg);
+
+    &:after {
+      right: 0;
+      top: 0;
+      bottom: auto;
+      background-position: -8px -32px;
+    }
+  }
+
+  .message-content {
+    margin-left: 32px;
+    margin-right: 0;
+    @include border-radius(0 2px 2px 2px);
+  }
+}
+
+.message-content {
+  // float: left;
+  margin-right: 32px;
+  padding: 7px 9px 11px;
+
+  @include border-radius(2px 2px 0 2px);
+  @include box-shadow(0 1px 2px fade-out(#000, 0.8));
+  background-color: #fff;
+
+  font-size: 13px;
+}
+
+.message-date {
+  margin-top: 5px;
+  color: fade-out(#000, 0.7);
+  font-size: 11px;
+}
+
+.avatar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 32px;
+  height: 32px;
+  // float: right;
+
+  @include border-radius(0 2px 2px 0);
+  background-image: url(https://lh4.googleusercontent.com/-nDBRo-_0z7k/AAAAAAAAAAI/AAAAAAAAABk/xoYkAi7Z4RY/s32-c-k/photo.jpg);
+
+  &:after {
+
+    .message {
+      float: right;
+    }
+    position: absolute;
+    bottom: -1px;
+    float: left;
+
+    display: block;
+    width: 7px;
+    height: 9px;
+    content: "";
+    background: url($sprite) -9px -8px no-repeat;
+  }
+
+  // &:after {
+  //   position: absolute;
+  //   right: 0;
+  //   display: block;
+  //   width: 7px;
+  //   height: 9px;
+  //   content: "";
+  //   background: url($sprite) -8px -32px no-repeat;
+  // }
+}
+
+[class^="icon-"], [class*="icon-"] {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  // vertical-align: text-top;
+  // line-height: 24px;
+  background: url($sprite) no-repeat;
+}
+
+.title-bar-icon {
+  @include opacity(0.5);
+  &:hover {
+    background-color: fade-out(#fff, 0.7);
+    @include opacity(1);
+    cursor: pointer;
+  }
+}
+
+.options-bar-icon {
+  position: absolute;
+  top: 50%;
+  margin-top: -$icon-size / 2;
+
+  @include opacity(0.55);
+  &:hover {
+    @include opacity(1);
+    cursor: pointer;
+  }
+}
+
+.icon-bubble   { background-position: 0 -48px; }
+.icon-minimize { background-position: -24px 0; }
+.icon-restore  { background-position: -48px 0; }
+.icon-maximize { background-position: -72px 0; }
+.icon-close    { background-position: -120px 0; }
+.icon-video    { background-position: -24px -24px; }
+.icon-gear     { background-position: -72px -24px; }
+.icon-add-user { background-position: -120px -24px; }
+.icon-smiley   { background-position: -48px -48px; }
+.icon-upload   { background-position: -96px -48px; }
+
+// Clearfix
+.group {
+  &:before, &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+  & {
+    *zoom: 1;
+  }
+}
+
+.message-input-wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  // width: $widget-width - 2;
+  width: 100%;
+  min-height: 40px;
+
+  border-top: 1px solid #c3c3c3;
+  background-color: #fff;
+
+  @media screen and (max-height: 100px) {
+    display: none;
+  }
+
+  &.s-focused {
+    border: 1px solid #4d90fe;
+    @include box-shadow(inset 0 1px 1px fade-out(#000, 0.8));
+  }
+
+  .icon {
+    position: absolute;
+    top: 8px;
+    // top: 50%;
+    // margin-top: -$icon-size / 2;
+    @include opacity(0.5);
+
+    &:hover {
+      @include opacity(1);
+      cursor: pointer;
+    }
+  }
+
+  .icon-smiley {
+    left: 6px;
+  }
+
+  .icon-upload {
+    right: 6px;
+  }
+}
+
+.message-input {
+  margin: 8px 8px 8px ($icon-size + 8);
+  padding: 3px;
+
+  // border: 1px solid red;
+  outline: 0px solid transparent;
+
+  direction: ltr;
+  font-size: 13px;
+
+  cursor: text;
+}
